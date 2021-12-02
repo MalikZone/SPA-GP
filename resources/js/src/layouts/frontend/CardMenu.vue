@@ -1,7 +1,7 @@
 <template>
     <div class="card shadow card-menu">
         <!-- <img :src=" '/assets/images/' + data.image " class="card-img-top" alt="..."> -->
-        <img src="" class="card-img-top" alt="...">
+        <img :src="img" class="card-img-top" alt="..." /> 
         <div class="card-body">
             <h5 class="card-title">{{ data.menu_name }}</h5>
             <p class="card-text">Rp. {{ new Intl.NumberFormat('id').format(data.price) }}</p>
@@ -20,9 +20,15 @@
 </template>
 
 <script>
+import ProductImage from "../../assets/images/ipok.jpg"
 export default {
     name : "CardMenu",
-    props : ["data"]
+    props : ["data"],
 
+    data(){
+        return {
+            img : ProductImage
+        }
+    }
 }
 </script>

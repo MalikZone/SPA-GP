@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="" alt="image" width="100%">
+                    <img :src="img" alt="image" width="100%" />
                 </div>
             </div>
         </div>
@@ -47,8 +47,15 @@
 </template>
 
 <script>
+import HeroImage from "../../assets/images/hero.png"
+
 export default {
-    name : "Hero"
+    name : "Hero",
+    data(){
+        return {
+            img : HeroImage
+        }
+    }
 }
 </script>
 

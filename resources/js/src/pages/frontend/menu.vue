@@ -99,7 +99,7 @@ export default {
 
         async pushToMenu(){
             let yourInputMenu   = this.input
-            let save = await axios.post("http://localhost:8000/api/save-menu", yourInputMenu)
+            let save = await axios.post(`/api/save-menu`, yourInputMenu)
             console.log(save.data.status)
             if (save.data.status) {
                 this.fetchDataMenu()
@@ -107,7 +107,7 @@ export default {
         },
 
         fetchDataMenu(){
-            axios.get('http://127.0.0.1:8000/api/menu')
+            axios.get(`/api/menu`)
                 .then(response => {
                     this.dataMenus = response.data
                     // console.log(response.data, 'data nih')

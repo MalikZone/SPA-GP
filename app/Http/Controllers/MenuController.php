@@ -19,13 +19,12 @@ class MenuController extends Controller
             'status'  => false,
             'message' => ''
         ];
-
         try {
             $menu = new Menu();
-            $menu->menu_code    = $request->menuCode;
-            $menu->menu_name    = $request->menuName;
-            $menu->price        = $request->price;
-            $menu->is_available = $request->available;
+            $menu->menu_code    = $request['menuName'];
+            $menu->menu_name    = $request['menuName'];
+            $menu->price        = $request['price'];
+            $menu->is_available = $request['available'];
             $menu->save();
 
             $result['status'] = true;
@@ -50,10 +49,10 @@ class MenuController extends Controller
         ];
         try {
             $menu = Menu::find($id);
-            $menu->menu_code    = $request->menu_code;
-            $menu->menu_name    = $request->menu_name;
-            $menu->price        = $request->price;
-            $menu->is_available = $request->is_available;
+            $menu->menu_code    = $request['menu_code'];
+            $menu->menu_name    = $request['menu_name'];
+            $menu->price        = $request['price'];
+            $menu->is_available = $request['is_available'];
             $menu->save();
 
             $result['status'] = true;
